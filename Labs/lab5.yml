@@ -3,14 +3,14 @@
 - name: Lab 5 - Create application
   connection: local
   gather_facts: no
-  hosts: bigip-a
+  hosts: all
 
   vars:
     servers: 
       - { name: Server1, address: "10.1.10.100", sessionState: "enabled" }
       - { name: Server2, address: "10.1.10.101", sessionState: "disabled"  }
     userName: admin
-    password: admin
+    password: adminadmin
 
 
   tasks:
@@ -56,7 +56,7 @@
           validate_certs: no
           module: ltm
           name: maint_pg_irule
-          content: "{{ lookup('file', '/home/ubuntu/ansible/tmp/maint_pg.irule') }}"
+          content: "{{ lookup('file', '../tmp/maint_pg.irule') }}"
        delegate_to: localhost
      
      - name: Create virtual server
@@ -67,8 +67,8 @@
          validate_certs: no 
          partition: Common
          name: red_vs
-         destination: "{{ vsAddr }}"
-         port: "{{ vsPort }}"  
+         destination: "10.1.20.120"
+         port: "80"  
          all_profiles:
            - http
          all_rules:
