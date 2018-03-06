@@ -1,14 +1,14 @@
 ---
 
 - name: Lab 3 - Create nodes using bigip_node module and with_items
-  hosts: bigip-a
+  hosts: all
   connection: local
   gather_facts: no
 
 
   vars:
     user: admin
-    password: admin
+    password: adminadmin
     servers:
       - { name: Server1, address: "10.1.10.100", sessionState: "enabled" }
       - { name: Server2, address: "10.1.10.101", sessionState: "disabled"  }
