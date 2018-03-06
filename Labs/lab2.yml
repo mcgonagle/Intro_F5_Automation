@@ -15,5 +15,5 @@
           validate_certs: no
           state: absent
           name: "Server1"
-     delegate_to: localhost
+       delegate_to: localhost
 
