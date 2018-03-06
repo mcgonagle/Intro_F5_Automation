@@ -1,7 +1,7 @@
 ---
 
 - name: Lab1 - Create a node
-  hosts: bigip-a
+  hosts: all
   connection: local
   tasks:
      - name: Create node using bigip_node module
