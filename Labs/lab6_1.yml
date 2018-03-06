@@ -1,13 +1,13 @@
 ---
 
 - name: Create HTTP application using the install HTTP iApp
-  hosts: bigip-a
+  hosts: all
   connection: local
   gather_facts: no
 
   vars:
     userName: admin
-    password: admin
+    password: adminadmin
     templateName: "f5.http.v1.2.0" 
     vsName: blue_vs
     vsAddr: 10.1.20.121

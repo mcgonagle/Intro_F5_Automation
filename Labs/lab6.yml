@@ -1,18 +1,18 @@
 ---
 
 - name: Install latest HTTP iApp template 
-  hosts: bigip-a
+  hosts: all
   connection: local
   gather_facts: no
 
   vars:
     userName: admin
-    password: admin
+    password: adminadmin
 
   tasks:
        - name: Install HTTP iApp
          bigip_iapp_template:
-           content: "{{ lookup('file', '/home/ubuntu/ansible/tmp/f5.http.v1.2.0.tmpl') }}"
+           content: "{{ lookup('file', '../tmp/f5.http.v1.2.0.tmpl') }}"
            password: "{{ userName }}"
            server: "{{ inventory_hostname }}"
            state: present
