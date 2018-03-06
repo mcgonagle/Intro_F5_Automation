@@ -1,10 +1,10 @@
 ---
 - name: Lab2 - Delete a node using internal variables
-  hosts: bigip-a
+  hosts: all
   connection: local
   vars:
    user: admin
-   password: admin
+   password: adminadmin
 
   tasks:
      - name: Delete node using bigip_node module
