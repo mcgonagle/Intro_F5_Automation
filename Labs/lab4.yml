@@ -3,7 +3,7 @@
 - name: Lab 4 - Create nodes using bigip_node module and with_items and encrypted variables
   connection: local
   gather_facts: no
-  hosts: bigip-a
+  hosts: all
 
   vars:
     servers:
