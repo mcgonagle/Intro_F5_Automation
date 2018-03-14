@@ -14,7 +14,7 @@
           name: "Server1"
           state: "{{ state }}"
        delegate_to: localhost
-       when state == "present"
+     when state == "present"
 
      - name: Create node using bigip_node module
        bigip_node:
@@ -25,4 +25,4 @@
           address: "10.1.10.100"
           state: "{{ state }}"
        delegate_to: localhost
-       when state == "absent"
+     when state == "absent"
