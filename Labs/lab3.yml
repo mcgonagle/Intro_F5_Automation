@@ -5,7 +5,6 @@
   connection: local
   gather_facts: no
 
-
   vars:
     user: admin
     password: adminadmin
