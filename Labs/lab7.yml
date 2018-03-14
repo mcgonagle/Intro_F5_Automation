@@ -4,7 +4,7 @@
   hosts: all
   connection: local
   tasks:
-     - name: Create node using bigip_node module
+     - name: Create node using bigip_node module and when conditional
        bigip_node:
           server: "{{ inventory_hostname }}"
           user: admin
@@ -14,9 +14,9 @@
           name: "Server1"
           state: "{{ state }}"
        delegate_to: localhost
-     when state == "present"
+     when: state == "present"
 
-     - name: Create node using bigip_node module
+     - name: Remove node using bigip_node module and when conditional
        bigip_node:
           server: "{{ inventory_hostname }}"
           user: admin
@@ -25,4 +25,4 @@
           address: "10.1.10.100"
           state: "{{ state }}"
        delegate_to: localhost
-     when state == "absent"
+     when: state == "absent"
