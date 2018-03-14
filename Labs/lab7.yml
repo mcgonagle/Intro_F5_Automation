@@ -14,4 +14,15 @@
           name: "Server1"
           state: "{{ state }}"
        delegate_to: localhost
+       when state == "present"
 
+     - name: Create node using bigip_node module
+       bigip_node:
+          server: "{{ inventory_hostname }}"
+          user: admin
+          password: adminadmin
+          validate_certs: no
+          address: "10.1.10.100"
+          state: "{{ state }}"
+       delegate_to: localhost
+       when state == "absent"
