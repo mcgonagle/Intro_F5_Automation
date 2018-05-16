@@ -9,8 +9,8 @@
     user: admin
     password: adminadmin
     servers:
-      - { name: Server1, address: "10.1.10.100", sessionState: "enabled" }
-      - { name: Server2, address: "10.1.10.101", sessionState: "disabled"  }
+      - { name: Server3, address: "10.1.10.103", sessionState: "enabled" }
+      - { name: Server2, address: "10.1.10.102", sessionState: "disabled"  }
 
   tasks:
      - name: Create nodes using with_items
